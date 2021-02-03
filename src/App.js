@@ -4,28 +4,12 @@ import { Provider } from 'react-redux'
 
 import Counter from './components/Counter'
 import Content from './components/Content'
+import Todos from './components/Todos'
 
-const initialState = {
-  counter: 0,
-}
-
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        counter: state.counter + 1,
-      }
-    case 'DECREMENT':
-      return {
-        counter: state.counter - 1,
-      }
-    default:
-      return state
-  }
-}
+import rootReducer from './reducers/index'
 
 const reduxStore = createStore(
-  reducer,
+  rootReducer,
 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
@@ -36,6 +20,8 @@ export default function App() {
       <div>
         <Content />
         <Counter />
+        <hr />
+        <Todos />
       </div>
     </Provider>
   )
