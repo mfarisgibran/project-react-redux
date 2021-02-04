@@ -1,27 +1,22 @@
 import React from 'react'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-import Counter from './components/Counter'
-import Content from './components/Content'
-import Todos from './components/Todos'
+import reduxStore from './redux/store'
 
-import rootReducer from './reducers/index'
-
-const reduxStore = createStore(
-  rootReducer,
-
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+// import Counter from './components/Counter'
+// import Content from './components/Content'
+// import Todos from './components/Todos'
+import Posts from './components/Posts'
 
 export default function App() {
   return (
     <Provider store={reduxStore}>
       <div>
-        <Content />
-        <Counter />
-        <hr />
-        <Todos />
+        {/* <Content /> */}
+        {/* <Counter /> */}
+        {/* <hr /> */}
+        {/* <Todos /> */}
+        <Posts />
       </div>
     </Provider>
   )
